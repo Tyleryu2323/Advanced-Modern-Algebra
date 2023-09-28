@@ -1,1 +1,3 @@
-
+              - name: latex2pdf
+                uses: thomas-chauvet/latex2pdf-action@1.1.0
+            
