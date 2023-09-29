@@ -26,6 +26,9 @@
 \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}{\end{trivlist}}
  
  
+\newenvironment{hint}[2][Hint]{\begin{trivlist}
+    \item[\hskip \labelsep {\bfseries #1}\hskip \labelsep {\bfseries #2.}]}
+    {\end{trivlist}}
 \usepackage[margin=1in]{geometry} 
 
 \usepackage{fancyhdr}
@@ -130,8 +133,69 @@ Prove that the composition of functions is associative: if $X\xrightarrow{f}Y\xr
 Prove that the composite of two injections is an injection, and that the composite of two surjections is a surjection. Conclude that the composite of two bijections is a bijection.
 \end{exercise}
 
+\begin{exercise}{1.8 (Pigeonhole Principle)}
+    \begin{enumerate}
+
+        \item[(i)] Let $f:X\rightarrow X$ be a function, where $X$ is a finite set. Prove equavalence of the following statements.
+        \begin{enumerate}
+            \item[(a)] $f$ is an injection.
+            \item[(b)] $f$ is a bijection.
+            \item[(c)] $f$ is a surjection.
+        \end{enumerate}
+
+        \item[(ii)] Prove that no two of the statements in (i) are equivalent when $X$ is an infinite set.
+        \item[(iii)] Suppose there are 501 pigeons, each sitting in some pigeonhole. If there are only 500 pifeonholes, prove that there is a hole containing more than one pigeon.
+    \end{enumerate}
+\end{exercise}
 
 
 
- 
+\begin{exercise}{1.9}
+
+    Let $Y$ be a subset of a finite set $X$, and let $f:Y\rightarrow X$ be an injection. Prove that there is a permutation $\alpha \in S_X$ with $\alpha |Y =f$.
+
+    
+\end{exercise}
+
+
+\begin{exercise}{1.10}
+
+    Find sgn$(\alpha)$ and $\alpha^{-1}$, where 
+    \begin{align*}
+        \alpha = \begin{pmatrix}
+            1&2&3&4&5&6&7&8&9\\9&8&7&6&5&4&3&2&1
+        \end{pmatrix}.
+    \end{align*}
+    
+\end{exercise}
+
+
+\begin{exercise}{1.11}
+
+    If $\alpha\in S_n$, prove that sgn$(\alpha^{-1}) =$ sgn$(\alpha)$.
+    
+\end{exercise}
+
+
+
+\begin{exercise}{1.12}
+
+    If $1\leq r \leq n$, show that there are 
+    \begin{align*}
+        \frac{1}r [n(n-1)...(n-r+1)]
+    \end{align*} 
+    $r$-cycles in $S_n$.
+
+    \begin{hint}
+        if 
+    \end{hint}
+
+\end{exercise}
+
+
+
+
+
+
+
 \end{document}
