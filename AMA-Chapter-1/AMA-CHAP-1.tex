@@ -186,15 +186,147 @@ Prove that the composite of two injections is an injection, and that the composi
     \end{align*} 
     $r$-cycles in $S_n$.
 
-    \begin{hint}
-        if 
+    \begin{hint}{}
+        There are exactly $r$ cycle notations for any $r-$cycle.
     \end{hint}
 
 \end{exercise}
 
+\begin{exercise}{1.13}
+
+    \begin{enumerate}
+        \item[(i)] If $\alpha$ is an $r-$cycle, show that $\alpha^r =(1)$.
+        \begin{hint}{}
+            If $\alpha=(i_0...i_{r-1})$, show that $\alpha^k(i_0) = i_j$, where $k=qr+j$ and $0\leq j < r$.
+        \end{hint}
+        \item[(ii)] If $\alpha$ is an $r-$cycle, show taht $r$ is the smallerst positive integer $k$ such that $\alpha^k=(1)$.
+    \end{enumerate}
+
+\end{exercise}
+
+
+\begin{exercise}{1.14}
+
+    Show that an $r-$cycle is an even permutation if and only if $r$ is odd.
+\end{exercise}
 
 
 
+\begin{exercise}{1.15}
+    \begin{enumerate}
+        \item[(i)] Let $\alpha = \beta\delta$ be a factorization of a permutation $\alpha$ into disjoint permutations. If $\beta$ moves $i$, prove that $\alpha^k(i) = \beta^k(i)$ for all $k \geq 1$.
+        
+        \item[(ii)] Let $\beta$ and $\gamma$ be cucles both of which move $i$. If $\beta^k(i) = \gamma^k(i)$ for all $k\geq 1$, prove that $\beta = \gamma$.
+    \end{enumerate}
+    
+\end{exercise}
+
+
+
+\begin{exercise}{1.16}
+
+    Given $X={1,2,...,n}$, let us call a permutation $\tau$ of $X$ an $\textit{\textbf{adjacency}}$ if it is a transposition of the form $(i \text{ }i+1)$ for $i<n$.
+    \begin{enumerate}
+        \item[(i)] Prove that every permutation in $S_n$, for $n\geq2$, is a product of adjacencies.
+        \item[(ii)] If $i<j$, prove that ($i$ $j$) is a product of an odd number of adjacencies.
+        \begin{hint}{}
+            Use induction on $j-i$.
+        \end{hint}
+    \end{enumerate}
+
+    
+\end{exercise}
+
+
+
+\begin{exercise}{1.17}
+    \begin{enumerate}
+        \item[(i)] Prove, for $n\geq2$, that every $\alpha\in S_n$ is a product of transpositions each of whose factors moves $n$.
+        \begin{hint}{} 
+            If $i<j<n$, then $(j\:n)(i\:j)(j\:n) = (i\:n)$, by Lemma 1.7, so that $(i\:j) = (j\:n)(i\:n)(j\:n)$.
+        \end{hint}
+        \item[(ii)] Why doesn't part (i) prove that a 15-puzzle with even starting position $\alpha$ which fixes $\square$ can be solved?
+    \end{enumerate}
+    
+\end{exercise}
+
+
+\begin{exercise}{1.18}
+    Define $f:{0,1,2,...,10} \rightarrow {0,1,2,...,10}$ by 
+    \begin{align*}
+        f(n)= \text{the remainder after dividing } 4n^2-3n^7 \text{ by 11.}
+    \end{align*}
+
+    \begin{enumerate}
+        \item[(i)] Show that $f$ is a permutation.
+        \item[(ii)] Compute the parity of $f$.
+        \item[(iii)] Compute the inverse of $f$.
+    \end{enumerate}
+    
+\end{exercise}
+
+
+
+\begin{exercise}{1.19}
+    If $\alpha$ is an $r-$cucle and $1<k<r$, is $\alpha^k$ an $r-$cycle?
+\end{exercise}
+
+\begin{exercise}{1.20}
+    \begin{enumerate}
+        \item[(i)] Prove that if $\alpha$ and $\beta$ are (not necessarily disjoint) permutations that commute, then $(\alpha\beta)^k=\alpha^k\beta^k$ for all $k\geq1$.
+        \begin{hint}{}
+            First show that $\beta\alpha^k = \alpha^k \beta$ by induction on $k$.
+        \end{hint}
+        \item[(ii)] Given an example of two permutations $\alpha$ and $\beta$ for which $(\alpha\beta)^2\neq \alpha^2\beta^2$.
+    \end{enumerate}
+\end{exercise}
+
+\begin{exercise}{1.21}
+    \begin{enumerate}
+        \item[(i)] Prove, for all $i$, that $\alpha \in S_n$ moves $i$ if and only if $\alpha^{-1}$ moves $i$.
+        \item[(ii)] Prove that if $\alpha,\beta \in S_n$ are disjoint and if $\alpha\beta=(1)$, then $\alpha=(1)$ and $\beta=(1)$.
+    \end{enumerate}
+    
+\end{exercise}
+
+
+\begin{exercise}{1.22}
+    Prove that the number of even permutations in $S_n$ is $\frac{1}2 n!$.
+    \begin{hint}{}
+        Let $\tau=(1\:2)$, and define $f: A_n\rightarrow O_n$, where $A_n$ is the set of all even permutations in $S_n$ and $O_n$ is the set of all odd permutations, by $f:\alpha \rightarrow \tau\alpha$. Show that $f$ is a bijection, so that $|A_n|=|O_n|$ and, hence, $|A_n=\frac{1}2 n!$.
+    \end{hint}
+\end{exercise}
+
+
+\begin{exercise}{1.23}
+    \begin{enumerate}
+        \item[(i)] How many permutations in $S_5$ commute with $\alpha = (1\:2\:3)$, and how many $textif{even}$ permutations in $S_5$ commute with $\alpha$?
+        \begin{hint}{}
+            Of the six permutations in $S_5$ commuting with $\alpha$, only three are even.
+        \end{hint} 
+        \item[(ii)] Same question for $(1\:2)(3\:4)$.
+        \begin{hint}{}
+            Of the eight permutations in $S_4$ commuting with $(1\:2)(3\:4)$, only four are even.
+        \end{hint} 
+    \end{enumerate}
+\end{exercise}
+
+
+
+\begin{exercise}{1.24}
+    Given an example of $\alpha,\beta,\gamma \in S_5$, with $\alpha \neq(1)$, such that $\alpha\beta = \beta\alpha, \alpha\gamma = \gamma\alpha$, and $\beta\gamma \neq \gamma\beta$.
+\end{exercise}
+
+
+
+\begin{exercise}{1.25}
+    If $n\geq3$, prove that if $\alpha\in S_n$ commutes with every $\beta\in S_n$, thwn $\alpha=(1)$.
+\end{exercise}
+
+
+\begin{exercise}{1.26}
+    If $\alpha=\beta_1...\beta_m$ is a product of disjoint cycles and $\delta$ is disjoint from $\alpha$, show that $\beta_1^{e_1}...\beta_m^{e_m}\delta$ commutes with $\alpha$, where $e_j\geq0$ for all $j$.
+\end{exercise}
 
 
 
