@@ -99,13 +99,13 @@ Chapter 1: Groups I}
  
 
 
-
-
  \begin{exercise}{1.4}
     Show that the quadratic formula does not hold for $f(x)=ax^2+bx+c$ if we view the coefficients $a,b,c$ as lying in the integers mod 2.
  \end{exercise}
 
-
+ \begin{proof}
+    Take $f(x) =x^2+x+1$, applying the quadratic formula, we have $r_1= \frac{-1 + \sqrt{1-4}}2 = \frac{1 + 1}2=1\neq0$ and $r_2= \frac{-1 - \sqrt{1-4}}2 = \frac{1 - 1}2=1\neq0$.
+ \end{proof}
 
 
 
@@ -120,18 +120,35 @@ Chapter 1: Groups I}
     Consider $f:\mathbb{Z}\rightarrow\mathbb{Z}, g:\mathbb{Z}\rightarrow\mathbb{Z}$ where $f(x) = -x, g(x) = |x|$. Then we see that ${gf(x)=|-x|=x}$,  $\forall x\in \mathbb{Z}$ while ${fg(1)=-|1|=-1}$.
  \end{proof}
 
+
+
  \begin{exercise}{1.6}
 
 Prove that the composition of functions is associative: if $X\xrightarrow{f}Y\xrightarrow{g}Z\xrightarrow{h}W$, then \begin{align*}h(gf)=(hg)f.\end{align*}
  \end{exercise}
 \begin{proof}
-     $h(gf) (x) = h(g(f(x)) = (gh)f(x)$ and 
+     $h(gf) (x) = h(g(f(x)) = (hg)f(x)$ 
 \end{proof}
+
+
+
+
 
 \begin{exercise}{1.7}
 
 Prove that the composite of two injections is an injection, and that the composite of two surjections is a surjection. Conclude that the composite of two bijections is a bijection.
 \end{exercise}
+
+\begin{proof}
+    Injection: Suppose we have $f:X\rightarrow Y$, $g:Y\rightarrow Z$ both injections. Then we see that $\forall a_1,a_2\in X$, $a_1=a_2 \implies f(a_1)=f(a_2) \implies g(f(a_1)) = g(f(a_2))$. Hence the composition of two injections is an injection.\\
+    Surjection: Suppose we have $f:X\rightarrow Y$, $g:Y\rightarrow Z$ both surjections. Then we see that $\forall c \in Z, \exists b \in Y$ s.t. $g(b)=c$. Also, since $f$ is surjective, there is $a\in X$ s.t. $f(a)=b$. Hence there is $a\in X$ with $g(f(a)) = c$ for all $c\in Z$.\\
+    Bijection: Since bijections are injective and surjective at the same time, compositions of two bijections must also be both injective and surjective at the same time.
+\end{proof}
+
+
+
+
+
 
 \begin{exercise}{1.8 (Pigeonhole Principle)}
     \begin{enumerate}
@@ -147,6 +164,19 @@ Prove that the composite of two injections is an injection, and that the composi
         \item[(iii)] Suppose there are 501 pigeons, each sitting in some pigeonhole. If there are only 500 pifeonholes, prove that there is a hole containing more than one pigeon.
     \end{enumerate}
 \end{exercise}
+
+\begin{proof}
+
+    \begin{enumerate}
+        \item[(i)] Since bijective iff surjective and injective, we only need to proof $(a)$ iff $(c)$. \\
+        Suppose $f$ is injective, then no two elements in $X$ are mapped to the same element, hence $|X|=|f(X)|$ or equavalently, $f$ is surjective.
+
+        \item[(ii)]
+    \end{enumerate}
+
+\end{proof}
+
+
 
 
 
