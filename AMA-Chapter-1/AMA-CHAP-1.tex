@@ -1,10 +1,4 @@
-% --------------------------------------------------------------
-% This is all preamble stuff that you don't have to worry about.
-% Head down to where it says "Start here"
-% --------------------------------------------------------------
- 
-\documentclass[12pt]{article}
- 
+\documentclass[15pt]{article}
 \usepackage[margin=1in]{geometry} 
 \usepackage{amsmath,amsthm,amssymb,scrextend}
 \newcommand{\N}{\mathbb{N}}
@@ -368,8 +362,17 @@ Prove that the composite of two injections is an injection, and that the composi
         \item[(ii)] Prove that the relation $a \equiv b$ if $ab^{-1} \in H$ is an equivalence relation 
         on $G$ whose equivalence classes are the right cosets of $H$.
     \end{enumerate}
-    
 \end{exercise}
+
+\begin{proof}
+    \begin{enumerate}
+        \item[$\implies$:] $Ha = Hb$ implies that Given $a,b\in G$,  $\forall h\in H, \exists h'\in H$  s.t. $ha=h'b$. This implies that
+        $ab^{-1} = h^{-1}h' \in H$.
+        \item[$\impliedby$:] $ab^{-1} \in H$ implies that  $\forall h\in H$ there is  $hab^{-1} \in H$, which implies that there is $h'\in H$ 
+        s.t. $hab^{-1} = h'$, which is equavalently $ha = h'b$, hence $Ha=Hb$.
+    \end{enumerate}
+
+\end{proof}
 
 
 
@@ -378,27 +381,45 @@ Prove that the composite of two injections is an injection, and that the composi
     \begin{enumerate}
         \item[(i)] Define the $\textbf{special linear group}$ by
         \begin{align*}
-            \text{SL}(2, \mathbb{R}) = {A \in \text{GL} (2, \mathbb{R}): \det(A)=1}.
+            \text{SL}(2, \mathbb{R}) = \{A \in \text{GL} (2, \mathbb{R}): \det(A)=1\}.
         \end{align*}
         Prove that SL(2, $\mathbb{R}$) is a subgroup of GL(2, $\mathbb{R}$).
         \item[(i)] Prove that SL(2, $\mathbb{Q}$) is a subgroup of GL(2, $\mathbb{R}$).
     \end{enumerate}
+
 \end{exercise}
 
+\begin{proof}
+    (i): We can easliy check that the two by two identity $I\in$ SL(2, $\mathbb{R}$)), 
+    product of matrices with determinant 1 remains determinant 1,
+    and that SL(2, $\mathbb{R}$) is subset of invertible matrices.
+    (2): Similar, noticing that $\mathbb Q$ is subgroup of $\mathbb R$.
+\end{proof}
 
 
 
 \begin{exercise}{1.40}
     \begin{enumerate}
-        \item[(i)] Give an example of two subgroups $H$ and $K$ of a group $G$ whose union $U\cupK$ is not a subgroup of G. 
+        \item[(i)] Give an example of two subgroups $H$ and $K$ of a group $G$ whose union $U\cup K$ is not a subgroup of G. 
         \begin{hint}{} Let $G$ be the four-group $\textbf{V}$.
         \item[(ii)] Prove that the union $H\cup K$ of two subgroups is itself a subgroup if and only if $H$ is a subset of $K$
         or $K$ is a subset of $H$.
-            
         \end{hint}
     \end{enumerate}
-
 \end{exercise}
+
+\begin{proof}
+    \begin{enumerate}
+        \item[(i)] Easy to verify that $H=\{ (1), (1 2)(3 4)\}$ and $K=\{(1), (1 3)(2 4)\}$ are subgroups of $D_4$
+        but that $(1 2)(3 4)\dot{}(1 3)(2 4) = (1 4)(2 3)$ is not in $H\cup K$.
+        \item[(ii)] $\impliedby$ is trivial, so we prove $\implies$. Consider proving the contrapositive statement,
+        if $K\nsubseteq H$ and $H\nsubseteq K$, $\exists k\in K, h\in H$ s.t. $k\notin H, h\notin K$, then for any 
+        $h\in H$, $hk \notin H$ since if $hk = h' \in H$, then $k= h^{-1}h' \in H$, contradicts to assumption, similarly
+        $hk \notin K$. Hence $hk \notin H\cup K$ and $H\cup K$ cannot be a subgroup.
+    \end{enumerate}
+\end{proof}
+
+
 
 
 \begin{exercise}{1.41}
@@ -407,6 +428,10 @@ Prove that the composite of two injections is an injection, and that the composi
         [G:H] = [G:K][K:H].
     \end{align*}
 \end{exercise}
+
+\begin{proof}
+    $[G:K][K:H] = \frac{|G|}{|K|}\frac{|K|}{|H|} = \frac{|G|}{|H|} = [G:H]$
+\end{proof}
 
 
 
@@ -419,6 +444,11 @@ Prove that the composite of two injections is an injection, and that the composi
 
 \end{exercise}
 
+\begin{proof}
+    Following hint, without loss of generality assume that $|H| \leq |K|$. Since $|H|$ and $|K|$ are co-prime, 
+    we know there is no $d< |H|$ s.t. $x^d=1$ since that would imply $d\mid |H|$ and $d\mid |K|$. Then $|H|$ must
+    be order of $x$ and hence divides $|K|$, contradiction. 
+\end{proof}
 
 
 
@@ -427,6 +457,17 @@ Prove that the composite of two injections is an injection, and that the composi
     Let $G$ be a group of order 4. Prove that either $G$ is cyclic or $x^2=1$ for every $x\in G$. Conclude,
     using Exercise 1.35 on page 27, that $G$ must be abelian.
 \end{exercise}
+
+\begin{proof}
+    We know $\mathbb {Z} / 4\mathbb {Z}$ is cyclic group of order 4, so we know the exsistance. We only need to show that
+    if $G$ is not cyclic, then $x^2=1$ for all $x\in G$. Assuming other wise, there exists group $G$ of order 4 and 
+    $x\in G$ with $x^2\neq 1$, since order of $x$ divides 4, we have either $x=1$ or $x^4=1$, either case $x^4=1$ and implies
+    that $G$ is cyclic. 
+
+    If $G$ cyclic, then $G$ is abelian as $a^xa^y=a^(x+y)=a^ya^x \forall x\in G$ for any group $G$. Since Exericise 1.35 implies 
+    that $G$ is abelian if $x^2=1$ for all $x\in G$, all group of order 4 are abelian.
+\end{proof}
+
 
 
 \begin{exercise}{1.44}
@@ -439,6 +480,21 @@ Prove that the composite of two injections is an injection, and that the composi
 
 \end{exercise}
 
+\begin{proof}
+    
+    First show that $\varphi$ is well defined: $aH=bH \implies \varphi(aH)=\varphi(bH)$. $aH=bH \iff a^{-1}b\in H$
+    $Ha^{-1} = Hb^{-1} \iff a^{-1}(b^{-1})^{-1} \in H$ by Exercise 1.38 we know that $a^{-1}(b^{-1})^{-1} = a^{-1}b \in H$
+    hence $aH=bH \implies \varphi(aH)=\varphi(bH)$.
+
+    Injection: If $ \exists a,b\in G$ s.t. $\varphi(aH) = \varphi(bH)$, then $Ha^{-1} = Hb^{-1}$ so $exists h \in H, a^{-1} = hb^{-1}$
+    Hence $h=a^{-1}b$ and $h^{-1} = b^{-1}a \in H$ since $H$ is subgroup. This is equavlently $aH=bH$, proving injectivity.
+
+    Surjection: Let $Ha$ be a coset of $H$, since $a=(a^{-1})^{-1}$, we know that $Ha = \varphi(a^{-1}H)$ and hence surjective.
+
+\end{proof}
+    
+
+
 
 
 \begin{exercise}{1.45}
@@ -450,13 +506,77 @@ Prove that the composite of two injections is an injection, and that the composi
 \end{exercise}
 
 
+\begin{proof}
+    
+\end{proof}
+
+
+
+
+
+\section*{1.5.  Homomorphisms}
+
+
+\begin{exercise}{1.46}
+
+    Show that if there is a bijection $f: X\rightarrow Y$ (that is, if $X$ and $Y$ have the same number of elements),
+    then there is an isomorphism $\varphi: S_X \rightarrow S_Y$.
+    \begin{hint}{}
+        If $\alpha \in S_X$, define $\varphi(\alpha) = faf^{-1}$. In particular, show that if $|X|=3$, then $\varphi$
+        takes a cycle involving symbols 1, 2, 3 into a cycle involving a,b,c as in Example 1.57.
+    \end{hint}
+    
+\end{exercise}
+
+
+
+
+\begin{exercise}{1.47}
+    \begin{enumerate}
+        \item[(i)] Show that the composite of Homomorphisms is it self a Homomorphism.
+        \item[(ii)] Show that the inverse of an isomorphism is an isomorphism.
+        \item[(iii)] Show that two groups that are isomorphic to a third groupd are isomorphic to each other.
+        \item[(iv)] Prove that iso,orphisms is an equavalence relation on any set of groups.
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}{1.48}
+    Prove that a group G is abelian if and only if the function $f:G\rightarrow G$, given by $f(a) = a^{-1}$, 
+    is a homomorphism.
+\end{exercise}
+
+\begin{exercise}{1.49}
+    This exercise gives some invariants of a group $G$. Let $f:G\rightarrow H$ be an isomorphism.
+    \begin{enumerate}
+        \item[(i)] Prove that if $a\in G$ has infinite orderm then so does f(a), and if $a$ has finiteg order $n$,
+        then so does $f(a)$. Concluded that if $G$ has an element of some order $n$ and $H$ does not, then $G \ncong H$.
+        \item[(ii)] Prove that if $G\ncong G$, then, for every divisor $d$ of $|G|$, bnoth $G$ and $H$ have the same number of elements of order $d$.
+        \item[(iii)] If $a\in G$, then its $\textbf{conjugacy class}$ is $\{gag^{-1}: g\in G\}$. If $G$ and $H$ are
+        isomoirphic groups, prove that they have the same number of conjugacy classes. Indeed, if $G$ has exactly $c$ 
+        conjugacy classes of size $s$, then so does $H$.
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}
+    Prove that $A_4$ and $D_{12}$ are nonisomorphic groups of order 12.
+\end{exercise}
+
+\begin{exercise}
+    \begin{enumerate}
+        \item[(i)] Find a subgroup $H$ of $S_4$ with $H\neq V$ and $H\cong V$.
+        \item[(ii)] Prove that a subgroup $H$ of $S_4$ in part(i) is not a normal subgroup.
+    \end{enumerate}
+\end{exercise}
+
+
+
+
+
+
+
+
+
+
 \end{document}
-
-
-
-
-
-
-
-
-
