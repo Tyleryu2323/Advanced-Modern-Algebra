@@ -507,10 +507,11 @@ Prove that the composite of two injections is an injection, and that the composi
 
 
 \begin{proof}
-    
+    Consider $P = \left(1a_1\right)\left(2a_2\right)...\left((p-1)a_{p-1}\right)$, since we know $\mathbb{Z} /p \mathbb{Z}$ is abelian, 
+    $P= (p-1)! (p-1)! \equiv (-1)(-1) \equiv 1 \mod p$ by Wilson's theorem. Suppose to the contrary that there are no $i\neq j$ s.t. 
+    $ia_i \equiv ja_j \mod p$, then we know that each $ka_k$ belongs to a different modular class. Hence $P\equiv (p-1)! \equiv -1 \mod p$ 
+    which is a contradiction.
 \end{proof}
-
-
 
 
 
@@ -527,8 +528,6 @@ Prove that the composite of two injections is an injection, and that the composi
     \end{hint}
     
 \end{exercise}
-
-
 
 
 \begin{exercise}{1.47}
@@ -559,11 +558,11 @@ Prove that the composite of two injections is an injection, and that the composi
 \end{exercise}
 
 
-\begin{exercise}
+\begin{exercise}{1.50}
     Prove that $A_4$ and $D_{12}$ are nonisomorphic groups of order 12.
 \end{exercise}
 
-\begin{exercise}
+\begin{exercise}{1.51}
     \begin{enumerate}
         \item[(i)] Find a subgroup $H$ of $S_4$ with $H\neq V$ and $H\cong V$.
         \item[(ii)] Prove that a subgroup $H$ of $S_4$ in part(i) is not a normal subgroup.
@@ -571,7 +570,89 @@ Prove that the composite of two injections is an injection, and that the composi
 \end{exercise}
 
 
+\begin{exercise}{1.52}
+    Let $G=\{x_1,..., x_n\}$ be a monoid, and let $A=\left[a_{ij}\right]$ be a miltiplication table of $G$; that is, $a_{ij} = a_ia_j$.
+    Prove that $G$ is a group if and only if $A$ is a $\textbf{\textit{Latin square}}$, that is, each row and column of $A$ is a permutation of $G$.
 
+\end{exercise}
+
+
+\begin{exercise}{1.53}
+    Let $G=\{ f:\mathbb R \rightarrow \mathbb R: f(x) = ax+b, \text{where } a\neq 0\}$. Prove taht $G$ is a group under composition that 
+    is isomorphic to the subgroup of GL(2, $\mathbb{R})$ consisting of all matrices of the form 
+    $\begin{bmatrix}
+        a & b \\ 0 & 1
+    \end{bmatrix}$
+\end{exercise}
+
+
+\begin{exercise}{1.54}
+    \begin{enumerate}
+        \item[(i)] If $f: G\rightarrow H$ is a homomorphism and $x\in G$ has order $k$, prove that $f(x)\in H$ has order $m$, 
+        where $m\mid k$.
+        \item[(ii)] If $f: G\rightarrow H$ is a homomorphism and $(|G|, |H|) = 1$, prove that $f(x)=1$ for all $x\in G$.
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}{1.55}
+    \begin{enumerate}
+        \item[(i)] Prove that $\begin{bmatrix}\cos\theta & -\sin\theta \\ \sin\theta & \cos\theta\end{bmatrix}^k = 
+        \begin{bmatrix}\cos k\theta & -\sin k\theta \\ \sin k\theta & \cos k\theta\end{bmatrix}$.
+        \begin{hint}{}
+            Use Induction on $k \geq 1$.
+        \end{hint}
+        \item[(ii)] Prove that the $\textbf{\textit{special orthogonal group }} SO(2, \mathbb{R})$, consisting of all $2\times 2$
+        orthogonal matrices of determinant 1, is isomorphic to the circle group $S$. (Denote the transpose of a matrix $A$ by $A^T$;
+        if $A^T=A^{-1}$, then $A$ is $\textbf{\textit{orthogonal}}$).
+        \begin{hint}{}
+            Consider $\varphi: \begin{bmatrix}\cos\alpha & -\sin\alpha \\ \sin\alpha & \cos\alpha\end{bmatrix} \mapsto (\cos\alpha, \sin\alpha)$.
+        \end{hint}
+    \end{enumerate}
+\end{exercise}
+
+
+
+\begin{exercise}{1.56}
+    Let $G$ be the additive group of all polynomials in $x$ with coefficients in $\mathbb Z$, and let
+    $H$ be the multiplicative group of all positive rationals. Prove that $G \cong H$.
+
+    \begin{hint}{}
+        List the prime numbers $p_0=2, p_1=3, p_2=5,...,$ and define
+        \begin{align*}
+            \varphi(e_0+e_1x+e_2x^2+...+e_nx^n) = p_0^{e_0}...p_n^{e_n}.
+        \end{align*}
+    \end{hint}
+    
+\end{exercise}
+
+
+
+\begin{exercise}{1.57}
+    \begin{enumerate}
+        \item[(i)] Show that if $H$ is a subgroup with $bH=Hb=\{hb: h\in H\}$ for every $b\in G$, the $H$ must be 
+        a normal subgroup.
+        \item[(ii)] Use part (i) to give a second proof of Proposition 1.68(ii): if $H \subseteq G$ has index 2, then $H\lhd G$.
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}{1.58}
+    \begin{enumerate}
+        \item[(i)] Prove that if $\alpha \in S_n$, then $\alpha$ and $\alpha^{-1}$ are conjugate.
+        \item[(ii)] Give an example of a group $G$ containing an element $x$ for which $x$ and $x^{-1}$ are not conjugate.
+    \end{enumerate}
+\end{exercise}
+
+
+\begin{exercise}{1.59}
+    \begin{enumerate}
+        \item[(i)] Prove that the intersection of any family of normal subgroups of a group $G$ is itself a normal subgroup of $G$.
+        \item[(ii)] If $X$ is a subset of group $G$, let $N$ be the intersection of all the normal subgroups of $G$ containing $X$. 
+        Prove that $X\subseteq N \lhd G$, and that if $S$ is any normal subgroup of $G$ contianing $X$, then $N\subseteq S$.
+        We call $N$ the $\textbf{\textit{normal subgroup of }} G \textbf{\textit{ generated by }} X$ 
+    \end{enumerate}
+\end{exercise}
 
 
 
